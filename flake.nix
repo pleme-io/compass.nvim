@@ -7,6 +7,10 @@
       url = "github:nix-community/crate2nix";
       flake = false;
     };
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
