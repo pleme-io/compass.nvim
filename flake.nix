@@ -32,7 +32,7 @@
       vimPlugins =
         (prev.vimPlugins or {})
         // {
-          compass-nvim = self.packages.${final.system}.default;
+          compass-nvim = self.packages.${final.stdenv.hostPlatform.system}.default;
         };
     };
   };
