@@ -5,6 +5,20 @@ edition = "2021"
 license = "MIT"
 description = "Rust core for compass.nvim — workspace-aware project navigation"
 
+# NOT a crates.io library, and saying so is the fix.
+#
+# `crate-type = ["cdylib"]` below means this builds a C dynamic library that
+# Neovim dlopen()s through nvim-oxi. There is no `rlib`, so NO Rust crate can
+# depend on it — `cargo add compass_core` would resolve and then link nothing.
+# Fleet consumers: zero.
+#
+# Without this line the repo counts as "a packageable crate with no release
+# flow" in every adoption audit, and the obvious remedy — bolt on an
+# auto-release shim — would publish an artifact nobody can use. The honest
+# state is that the release artifact here is a Neovim plugin, distributed by a
+# plugin manager, not a registry.
+publish = false
+
 [lib]
 name = "compass_core"
 crate-type = ["cdylib"]
