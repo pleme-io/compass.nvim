@@ -1,6 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cargo_lock_sha256": "7b0db247984c85212f45f6b890af4190afe4f6b744fc6efd26087bcb5ce4a888",
+  "manifest_sha256": {
+    "Cargo.toml": "3903b304063d2ffe794bc5e7bde07102df9b2b3e3258a49539a5f0a777402394"
+  },
   "target_resolves": {
     "base": {
       "autocfg-1.5.0": {
@@ -14,9 +17,11 @@
             "name": "iana_time_zone",
             "package_key": "iana-time-zone-0.1.65",
             "kind": "normal",
-            "features": [],
+            "features": [
+              "fallback"
+            ],
             "uses_default_features": true,
-            "optional": false,
+            "optional": true,
             "target": "cfg(unix)",
             "tree": "target"
           },
@@ -25,7 +30,7 @@
             "package_key": "num-traits-0.2.19",
             "kind": "normal",
             "features": [],
-            "uses_default_features": true,
+            "uses_default_features": false,
             "optional": false,
             "target": null,
             "tree": "target"
@@ -96,7 +101,9 @@
             "name": "nvim_oxi",
             "package_key": "nvim-oxi-0.5.1",
             "kind": "normal",
-            "features": [],
+            "features": [
+              "neovim-0-10"
+            ],
             "uses_default_features": true,
             "optional": false,
             "target": null,
@@ -220,7 +227,7 @@
             "kind": "normal",
             "features": [],
             "uses_default_features": true,
-            "optional": false,
+            "optional": true,
             "target": null,
             "tree": "target"
           }
@@ -519,7 +526,7 @@
             "package_key": "proc-macro2-1.0.106",
             "kind": "normal",
             "features": [],
-            "uses_default_features": true,
+            "uses_default_features": false,
             "optional": false,
             "target": null,
             "tree": "target"
@@ -583,8 +590,10 @@
             "name": "proc_macro2",
             "package_key": "proc-macro2-1.0.106",
             "kind": "normal",
-            "features": [],
-            "uses_default_features": true,
+            "features": [
+              "proc-macro"
+            ],
+            "uses_default_features": false,
             "optional": false,
             "target": null,
             "tree": "target"
@@ -715,7 +724,7 @@
             "package_key": "proc-macro2-1.0.106",
             "kind": "normal",
             "features": [],
-            "uses_default_features": true,
+            "uses_default_features": false,
             "optional": false,
             "target": null,
             "tree": "target"
@@ -870,6 +879,28 @@
           }
         }
       },
+      "aarch64-unknown-linux-gnu": {
+        "overrides": {
+          "iana-time-zone-0.1.65": {
+            "runtime_dependencies": [],
+            "build_dependencies": [],
+            "features": [
+              "fallback"
+            ]
+          }
+        }
+      },
+      "aarch64-unknown-linux-musl": {
+        "overrides": {
+          "iana-time-zone-0.1.65": {
+            "runtime_dependencies": [],
+            "build_dependencies": [],
+            "features": [
+              "fallback"
+            ]
+          }
+        }
+      },
       "x86_64-apple-darwin": {
         "overrides": {
           "core-foundation-sys-0.8.7": {
@@ -912,28 +943,6 @@
         }
       },
       "x86_64-unknown-linux-musl": {
-        "overrides": {
-          "iana-time-zone-0.1.65": {
-            "runtime_dependencies": [],
-            "build_dependencies": [],
-            "features": [
-              "fallback"
-            ]
-          }
-        }
-      },
-      "aarch64-unknown-linux-gnu": {
-        "overrides": {
-          "iana-time-zone-0.1.65": {
-            "runtime_dependencies": [],
-            "build_dependencies": [],
-            "features": [
-              "fallback"
-            ]
-          }
-        }
-      },
-      "aarch64-unknown-linux-musl": {
         "overrides": {
           "iana-time-zone-0.1.65": {
             "runtime_dependencies": [],
